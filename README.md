@@ -94,6 +94,10 @@ respond(...)              // AI agent response handler
 ## Example Interaction
 
 ```bash
+# Player reads current question
+near view $CONTRACT_ID get_question
+>> What beats steel?
+
 # Player submits challenge
 near call $CONTRACT_ID request '{"message": "hummer"}' --accountId player.near
 
@@ -103,11 +107,11 @@ near call $CONTRACT_ID request '{"message": "hummer"}' --accountId player.near
 # 3. Processes with LLM completion
 # 4. Submits response
 # 5. Transaction completes with result:
-# "Player player.near lost: A Hummer can drive right over steel, and probably over your opponent's ego too."
+>> Player player.near won: A Hummer can drive right over steel, and probably over your opponent's ego too.
 ```
 [Transaction with that action](https://nearblocks.io/txns/59xDG5Cnpy1ck1SN9YW32cNcd6vBa68SNaoFJW24erH2#execution)
 
 ## DEMO 
 
 - Demo contract: `w00.ai-is-near.near`
-- Demo agent: `zavodil.near/what-beats-rock-onchain/0.1`
+- Demo agent: [zavodil.near/what-beats-rock-onchain/latest](https://app.near.ai/agents/zavodil.near/what-beats-rock-onchain/latest/run)
